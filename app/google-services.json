@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "564159682598",
+    "project_id": "latradicional1944-ed6b5",
+    "storage_bucket": "latradicional1944-ed6b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564159682598:android:15fbaf6331c062e48f2ee7",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564159682598-9b5en654keibtqem13atjn6nnq1nk13e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLlfvEtX_oMjFevugZ9trZT9qWCPYh4_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564159682598-9b5en654keibtqem13atjn6nnq1nk13e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
