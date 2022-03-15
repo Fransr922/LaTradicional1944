@@ -16,6 +16,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".Editarcuenta"
+            android:exported="false" />
+        <activity
+            android:name=".Buscarusuario"
+            android:exported="false" />
+        <activity
+            android:name=".DarsedeBaja"
+            android:exported="false" />
+        <activity
+            android:name=".EliminarUsuario"
+            android:exported="false" />
+        <activity
             android:name=".Dardealta"
             android:exported="false" />
         <activity

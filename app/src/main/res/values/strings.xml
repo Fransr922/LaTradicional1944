@@ -22,8 +22,21 @@
     <string name="no_verificado">No verificado</string>
     <string name="cerrar_sesi_n">Cerrar Sesión</string>
     <string name="pantalla_admin">Pantalla admin</string>
-    <string name="_1_camarero_2_administrador_3_camarero_4_cocinero_5_transportista">*1-Camarero 2-Administrador 3-Camarero 4-Cocinero 5 Transportista</string>
+    <string name="_1_cliente_2_administrador_3_camarero_4_cocinero_5_transportista">*1-Cliente 2-Administrador 3-Camarero 4-Cocinero 5 Transportista</string>
     <string name="rol">Rol</string>
     <string name="atr_s">Atrás</string>
     <string name="agregar">Agregar</string>
+    <string name="pantalla_camarero">Pantalla camarero</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="darse_de_baja">Darse de Baja</string>
+    <string name="introduce_tu_correo_para_confirmar_que_quiere_darse_de_baja">Introduce tu correo para confirmar que quiere darse de baja</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="buscar_usuario">Buscar Usuario</string>
+    <string name="eliminar_usuario">Eliminar Usuario</string>
+    <string name="dar_de_alta">Dar de alta</string>
+    <string name="buscar">Buscar</string>
+    <string name="ingresar_nombre">Ingresar nombre</string>
+    <string name="telefono">telefono</string>
+    <string name="editar_cuenta">Editar cuenta</string>
+    <string name="editar">Editar</string>
 </resources>
