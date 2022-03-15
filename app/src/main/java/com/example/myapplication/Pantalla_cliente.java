@@ -3,6 +3,7 @@ package com.example.myapplication;
 import static android.content.ContentValues.TAG;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,15 +14,25 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Pantalla_cliente extends AppCompatActivity {
 
     TextView NoVerificado;
-    Button btnVerificar, btncerrar;
+    Button btnVerificar, btncerrar, btnbaja, btnedit;
     FirebaseAuth fAuth;
 
     @Override
@@ -31,6 +42,8 @@ public class Pantalla_cliente extends AppCompatActivity {
 
         btnVerificar = findViewById(R.id.btnVerificar);
         btncerrar = findViewById(R.id.btnLogout);
+        btnbaja = findViewById(R.id.btnBaja);
+        btnedit = findViewById(R.id.btneditarcuenta);
 
         NoVerificado = findViewById(R.id.txtNoverificado);
         fAuth = FirebaseAuth.getInstance();
@@ -71,11 +84,23 @@ public class Pantalla_cliente extends AppCompatActivity {
         }
     });
 
+        btnbaja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), DarsedeBaja.class));
+            }
+        });
+
+        btnedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Editarcuenta.class));
+            }
+        });
+
+
+
     }
 
-    /*public void logout(View view) {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), iniciarsesion.class));
-        finish();
-    }*/
+
 }

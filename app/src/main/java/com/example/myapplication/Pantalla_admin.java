@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Pantalla_admin extends AppCompatActivity {
 
     TextView NoVerificado;
-    Button btnVerificar, btncerrar, btnAlta;
+    Button btnVerificar, btncerrar, btnAlta, btndeleteusu, btnbuscarusu;
     FirebaseAuth fAuth;
 
     @Override
@@ -32,6 +32,8 @@ public class Pantalla_admin extends AppCompatActivity {
         btnVerificar = findViewById(R.id.btnVerificar);
         btncerrar = findViewById(R.id.btnLogout);
         btnAlta = findViewById(R.id.btnDarDeAlta);
+        btndeleteusu = findViewById(R.id.btnElimUsu);
+        btnbuscarusu = findViewById(R.id.btnbuscarusuario);
 
         NoVerificado = findViewById(R.id.txtNoverificado);
         fAuth = FirebaseAuth.getInstance();
@@ -76,6 +78,20 @@ public class Pantalla_admin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Dardealta.class ));
+            }
+        });
+
+        btndeleteusu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), EliminarUsuario.class ));
+            }
+        });
+
+        btnbuscarusu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Buscarusuario.class));
             }
         });
     }

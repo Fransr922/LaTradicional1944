@@ -38,6 +38,7 @@ public class registrar extends AppCompatActivity {
     Pattern caract = Pattern.compile(".{9}");
     Pattern caract1 = Pattern.compile(".{7,}");
     FirebaseAuth fAuth;
+    int kk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,71 +86,78 @@ public class registrar extends AppCompatActivity {
                 }else {
                     if (!caract1.matcher(contras).matches()) {
                         Toast.makeText(this, "Contraseña no valida, debe tener al menos longitud 7", Toast.LENGTH_SHORT).show();
-                    }else{
+                    }else {
 
-                    fAuth.createUserWithEmailAndPassword(correoFIRE, contrasFIRE).addOnCompleteListener(task -> {
 
-                        if (task.isSuccessful()) {
-                            FirebaseUser Tuser = fAuth.getCurrentUser();
-                            Tuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void unused) {
-                                    Toast.makeText(registrar.this, "La verificacion de email ha sido enviada", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "Error: Email no enviado" + e.getMessage());
-                                }
-                            });
+                        fAuth.createUserWithEmailAndPassword(correoFIRE, contrasFIRE).addOnCompleteListener(task -> {
 
-                        } else {
-                            Toast.makeText(registrar.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-
-                    });
-
-                    StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.68.106/login/register.php",
-                            new Response.Listener<String>() {
-
-                                @Override
-                                public void onResponse(String response) {
-                                    if (response.equalsIgnoreCase("registro correcto")) {
-
-                                        Toast.makeText(registrar.this, "Registrad@", Toast.LENGTH_SHORT).show();
-
-                                        Intent intent = new Intent(registrar.this, iniciarsesion.class);
-                                        startActivity(intent);
-                                    } else {
-                                        Toast.makeText(registrar.this, response, Toast.LENGTH_SHORT).show();
-                                        Toast.makeText(registrar.this, "No se puede registrar", Toast.LENGTH_SHORT).show();
+                            if (task.isSuccessful()) {
+                                FirebaseUser Tuser = fAuth.getCurrentUser();
+                                Tuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Toast.makeText(registrar.this, "La verificacion de email ha sido enviada", Toast.LENGTH_SHORT).show();
                                     }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, "Error: Email no enviado" + e.getMessage());
+                                    }
+                                });
 
+                            } else {
+                                //Toast.makeText(registrar.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                kk =0;
+                            }
+
+                        });
+
+                        if (kk == 0) {
+                            Toast.makeText(registrar.this, "El correo ya esta en uso en una cuenta", Toast.LENGTH_SHORT).show();
+                        } else{
+
+                            StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.68.106/login/register.php",
+                                    new Response.Listener<String>() {
+
+                                        @Override
+                                        public void onResponse(String response) {
+                                            if (response.equalsIgnoreCase("registro correcto")) {
+
+                                                Toast.makeText(registrar.this, "Registrad@", Toast.LENGTH_SHORT).show();
+
+                                                Intent intent = new Intent(registrar.this, iniciarsesion.class);
+                                                startActivity(intent);
+                                            } else {
+                                                Toast.makeText(registrar.this, response, Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(registrar.this, "No se puede registrar", Toast.LENGTH_SHORT).show();
+                                            }
+
+                                        }
+                                    }, new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Toast.makeText(registrar.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                                 }
-                            }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(registrar.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }) {
-                        @Override
-                        protected Map<String, String> getParams() throws AuthFailureError {
+                            }) {
+                                @Override
+                                protected Map<String, String> getParams() throws AuthFailureError {
 
-                            Map<String, String> params = new HashMap<>();
+                                    Map<String, String> params = new HashMap<>();
 
-                            params.put("nombre", nombre);
-                            params.put("apellidos", apell);
-                            params.put("contrasenia", contras);
-                            params.put("correo", correo);
-                            params.put("telefono", telf);
-                            return params;
-                        }
-                    };
+                                    params.put("nombre", nombre);
+                                    params.put("apellidos", apell);
+                                    params.put("contrasenia", contras);
+                                    params.put("correo", correo);
+                                    params.put("telefono", telf);
+                                    return params;
+                                }
+                            };
 
 
-                    RequestQueue requestQueue = Volley.newRequestQueue(registrar.this);
-                    requestQueue.add(request);
+                        RequestQueue requestQueue = Volley.newRequestQueue(registrar.this);
+                        requestQueue.add(request);
 
+                    }
                 }//else
                 }
             }

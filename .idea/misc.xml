@@ -5,11 +5,15 @@
       <map>
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_IniciarSesion.xml" value="0.21642969984202212" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_autenticacion_correo.xml" value="0.33" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_buscarusuario.xml" value="0.2296195652173913" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_dardealta.xml" value="0.28541666666666665" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_darsede_baja.xml" value="0.24682971014492755" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_editarcuenta.xml" value="0.25" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_eliminar_usuario.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_iniciarsesion.xml" value="0.33" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_admin.xml" value="0.25" />
-        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_camarero.xml" value="0.13518518518518519" />
-        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_cliente.xml" value="0.19293478260869565" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_camarero.xml" value="0.25" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_cliente.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_cocinero.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_trasportista.xml" value="0.13518518518518519" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_registrar.xml" value="0.33" />
