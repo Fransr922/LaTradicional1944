@@ -2,10 +2,6 @@ package com.example.myapplication;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,25 +10,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Pantalla_cliente extends AppCompatActivity {
 
     TextView NoVerificado;
-    Button btnVerificar, btncerrar, btnbaja, btnedit;
+    Button btnVerificar, btncerrar, btnbaja, btnedit, btnreserva, btnreservacomida, btnprueba;
     FirebaseAuth fAuth;
 
     @Override
@@ -44,6 +33,10 @@ public class Pantalla_cliente extends AppCompatActivity {
         btncerrar = findViewById(R.id.btnLogout);
         btnbaja = findViewById(R.id.btnBaja);
         btnedit = findViewById(R.id.btneditarcuenta);
+        btnreserva = findViewById(R.id.btnreservar);
+        btnreservacomida = findViewById(R.id.btnreservarmyc);
+
+        btnprueba = findViewById(R.id.btnprueb);
 
         NoVerificado = findViewById(R.id.txtNoverificado);
         fAuth = FirebaseAuth.getInstance();
@@ -98,6 +91,19 @@ public class Pantalla_cliente extends AppCompatActivity {
             }
         });
 
+        btnreserva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Reservarmesa.class));
+            }
+        });
+
+        btnreservacomida.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), reservarcomidaymesa.class));
+            }
+        });
 
 
     }

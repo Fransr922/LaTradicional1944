@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">La Tradicional1994</string>
     <string name="button">Button</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -39,4 +39,30 @@
     <string name="telefono">telefono</string>
     <string name="editar_cuenta">Editar cuenta</string>
     <string name="editar">Editar</string>
+    <string name="ingresar_hora">Ingresar hora</string>
+    <string name="abrir_calendario">Abrir Calendario</string>
+    <string name="reservar_mesa">Reservar mesa</string>
+    <string name="fecha">Fecha</string>
+    <string name="seleccionar_fecha">Seleccionar fecha</string>
+    <string name="hora">Hora</string>
+    <string name="selecionar_hora">selecionar hora</string>
+    <string name="hacer_reserva">Hacer reserva</string>
+    <string name="selec_personas">Seleccionar personas</string>
+    <string name="personas">Personas:</string>
+    <string name="subirybajar">subirybajar:</string>
+    <string name="a_adir">Añadir</string>
+    <string name="agua">Agua</string>
+    <string name="nuggets">Nuggets</string>
+    <string name="nachos">Nachos</string>
+    <string name="reservar_mesa_y_comida">reservar mesa y comida</string>
+    <string name="patatas">Patatas</string>
+    <string name="prueba">prueba</string>
+    <string name="fanta">fanta</string>
+    <string name="finguers">finguers</string>
+
+    <string-array name="lista">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+    </string-array>
 </resources>

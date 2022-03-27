@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Prueba" >
+
+    <ScrollView
+        android:layout_width="361dp"
+        android:layout_height="423dp"
+        android:layout_marginBottom="16dp"
+        android:scrollbarSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaprueba"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="340dp"
+                android:layout_height="524dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+                <TextView
+                    android:id="@+id/com1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="68dp"
+                    android:layout_marginEnd="108dp"
+                    android:text="@string/agua"
+                    app:layout_constraintEnd_toStartOf="@+id/an1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/an1"
+                    android:layout_width="98dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginEnd="72dp"
+                    android:text="@string/a_adir"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <TextView
+                    android:id="@+id/com2"
+                    android:layout_width="52dp"
+                    android:layout_height="26dp"
+                    android:layout_marginTop="76dp"
+                    android:text="@string/patatas"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@+id/com1"
+                    app:layout_constraintStart_toStartOf="@+id/com1"
+                    app:layout_constraintTop_toBottomOf="@+id/com1" />
+
+                <Button
+                    android:id="@+id/an2"
+                    android:layout_width="102dp"
+                    android:layout_height="53dp"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="76dp"
+                    android:text="@string/a_adir"
+                    app:layout_constraintEnd_toEndOf="@+id/an1"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/an1"
+                    app:layout_constraintTop_toBottomOf="@+id/an1" />
+
+                <TextView
+                    android:id="@+id/com3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="296dp"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="@+id/com2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/com2"
+                    app:layout_constraintTop_toBottomOf="@+id/com2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/listaprueba"
+        android:layout_width="349dp"
+        android:layout_height="190dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12" />
+</androidx.constraintlayout.widget.ConstraintLayout>
