@@ -16,6 +16,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".reservarcomidaymesa"
+            android:exported="false" />
+        <activity
+            android:name=".Prueba"
+            android:exported="false" />
+        <activity
+            android:name=".Reservarmesaycomida"
+            android:exported="false" />
+        <activity
+            android:name=".Reservarmesa"
+            android:exported="false" />
+        <activity
             android:name=".Editarcuenta"
             android:exported="false" />
         <activity
@@ -29,9 +41,6 @@
             android:exported="false" />
         <activity
             android:name=".Dardealta"
-            android:exported="false" />
-        <activity
-            android:name=".AutenticacionCorreo"
             android:exported="false" />
         <activity
             android:name=".registrar"
