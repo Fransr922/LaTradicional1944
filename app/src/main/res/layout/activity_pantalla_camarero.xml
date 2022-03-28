@@ -6,13 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Pantalla_camarero">
 
-    <TextView
-        android:id="@+id/textPantCamarero"
+
+    <Button
+        android:id="@+id/verreservasC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pantalla_camarero"
+        android:text="@string/ver_reservas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.351" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

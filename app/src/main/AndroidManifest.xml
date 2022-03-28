@@ -16,6 +16,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".AnularReserva"
+            android:exported="false" />
+        <activity
+            android:name=".VerReservasCliente"
+            android:exported="false" />
+        <activity
+            android:name=".VerComidaReservada"
+            android:exported="false" />
+        <activity
+            android:name=".VerReservas"
+            android:exported="false" />
+        <activity
             android:name=".reservarcomidaymesa"
             android:exported="false" />
         <activity
