@@ -59,6 +59,22 @@
     <string name="prueba">prueba</string>
     <string name="fanta">fanta</string>
     <string name="finguers">finguers</string>
+    <string name="id_usuario">ID USUARIO:</string>
+    <string name="fechaaa">FECHA:</string>
+    <string name="horaaaa">HORA:</string>
+    <string name="ver_reservas">Ver reservas</string>
+    <string name="cargar">Cargar</string>
+    <string name="ver_reservas_de_mesa">Ver reservas de mesa</string>
+    <string name="ver_reserva_de_mesa_y_comida">Ver reserva de mesa y comida</string>
+    <string name="personasaaaa">Personas</string>
+    <string name="ver_comida_reservada">Ver comida reservada</string>
+    <string name="comida">Comida</string>
+    <string name="anular">Anular</string>
+    <string name="ver_mis_reservas">Ver mis reservas</string>
+    <string name="ver_mis_reservas_de_mesa">Ver mis reservas de mesa</string>
+    <string name="ver_mis_reservas_de_mesa_y_comida">Ver mis reservas de mesa y comida</string>
+    <string name="hh_mm">*(hh:mm)</string>
+    <string name="yyyy_mm_dd">*(yyyy-mm-dd)</string>
 
     <string-array name="lista">
         <item>2</item>

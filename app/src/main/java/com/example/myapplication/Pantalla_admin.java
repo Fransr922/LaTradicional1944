@@ -2,9 +2,6 @@ package com.example.myapplication;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Pantalla_admin extends AppCompatActivity {
 
     TextView NoVerificado;
-    Button btnVerificar, btncerrar, btnAlta, btndeleteusu, btnbuscarusu;
+    Button btnVerificar, btncerrar, btnAlta, btndeleteusu, btnbuscarusu, btbverreservs;
     FirebaseAuth fAuth;
 
     @Override
@@ -34,6 +34,7 @@ public class Pantalla_admin extends AppCompatActivity {
         btnAlta = findViewById(R.id.btnDarDeAlta);
         btndeleteusu = findViewById(R.id.btnElimUsu);
         btnbuscarusu = findViewById(R.id.btnbuscarusuario);
+        btbverreservs = findViewById(R.id.btnverreservasadm);
 
         NoVerificado = findViewById(R.id.txtNoverificado);
         fAuth = FirebaseAuth.getInstance();
@@ -92,6 +93,13 @@ public class Pantalla_admin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Buscarusuario.class));
+            }
+        });
+
+        btbverreservs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), VerReservas.class));
             }
         });
     }
