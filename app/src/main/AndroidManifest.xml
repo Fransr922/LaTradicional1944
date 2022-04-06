@@ -16,6 +16,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".Tomarnota"
+            android:exported="false" />
+        <activity
+            android:name=".HacerPedidoMesa"
+            android:exported="false" />
+        <activity
+            android:name=".HacerPedidoDomiciliodos"
+            android:exported="false" />
+        <activity
+            android:name=".HacerPedidoDomicilio"
+            android:exported="false" />
+        <activity
             android:name=".AnularReserva"
             android:exported="false" />
         <activity

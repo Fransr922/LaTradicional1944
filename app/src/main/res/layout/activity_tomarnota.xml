@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tomarnota">
+
+    <TextView
+        android:id="@+id/txtauxed23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView223"
+        android:layout_width="410dp"
+        android:layout_height="462dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image123"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/especialidades" />
+
+                <TextView
+                    android:id="@+id/titulo123"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/especialidades"
+                    android:textAlignment="center"
+                    android:textSize="34sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta123"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/lagarto_ib_rico_con_sal_rosa"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio123"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_12" />
+
+                <Button
+                    android:id="@+id/comp123"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta223"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/tortilla_de_perretxicos_al_ajillo"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio223"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_10" />
+
+                <Button
+                    android:id="@+id/comp223"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta323"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/setas_empanadas_con_alioli"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio323"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_10" />
+
+                <Button
+                    android:id="@+id/comp323"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image223"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/delmar"
+                    android:contentDescription="@string/todo" />
+
+                <TextView
+                    android:id="@+id/titulo223"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/del_mar"
+                    android:textAlignment="center"
+                    android:textSize="34sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta423"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:padding="15dp"
+                    android:text="@string/calamares_a_la_andaluza_con_alioli"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio423"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_12" />
+
+                <Button
+                    android:id="@+id/comp423"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta523"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:padding="15dp"
+                    android:text="@string/rabas_con_alioli_negro"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio523"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_10" />
+
+                <Button
+                    android:id="@+id/comp523"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta623"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:padding="15dp"
+                    android:text="@string/pulpo_a_la_gallega"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio623"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_10" />
+
+                <Button
+                    android:id="@+id/comp623"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image323"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="@string/todo"
+                    app:srcCompat="@drawable/losclasicos"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/titulo323"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/los_cl_sicos"
+                    android:textAlignment="center"
+                    android:textSize="34sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta723"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:padding="15dp"
+                    android:text="@string/oreja_al_mojo_rojo"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio723"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_10" />
+
+                <Button
+                    android:id="@+id/comp723"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta823"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:padding="15dp"
+                    android:text="@string/callos_a_la_madrile_a"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio823"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_10" />
+
+                <Button
+                    android:id="@+id/comp823"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/carta923"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:padding="15dp"
+                    android:text="@string/choricitos_a_la_sidra"
+                    android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/precio923"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="15dp"
+                    android:text="@string/_10" />
+
+                <Button
+                    android:id="@+id/comp923"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/a_adir" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/listarcomidapedida23"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView223" />
+
+
+    <ScrollView
+        android:layout_width="407dp"
+        android:layout_height="101dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listarcomidapedida23">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/totaldinero23"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingStart="45dp"
+                    android:text="@string/total"
+                    android:textAlignment="textStart"
+                    android:textSize="24sp"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/sumaxx23"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/nummesa3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="@string/seleccione_el_n_mero_de_mesa"
+                android:textSize="16sp"
+                android:paddingStart="20dp"
+                tools:ignore="RtlSymmetry" />
+
+            <LinearLayout
+                android:id="@+id/spinnermesa3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                tools:ignore="RtlSymmetry">
+
+                <Spinner
+                    android:id="@+id/spinnermesita3"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/spmesa"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/tnnohacer23"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/atr_s"/>
+
+                <Button
+                    android:id="@+id/btnpediramesa3"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:text="@string/tomar_nota" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
