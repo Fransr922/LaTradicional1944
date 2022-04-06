@@ -15,7 +15,6 @@
     <string name="tel_fono">Teléfono</string>
     <string name="iniciar_sesi_n">INICIAR SESIÓN</string>
     <string name="registrarse">REGISTRARSE</string>
-    <string name="todo">TODO</string>
     <string name="verificar">Verificar</string>
     <string name="correo_no_verificaco">Correo No Verificaco</string>
     <string name="pantalla_cliente">Pantalla cliente</string>
@@ -75,6 +74,33 @@
     <string name="ver_mis_reservas_de_mesa_y_comida">Ver mis reservas de mesa y comida</string>
     <string name="hh_mm">*(hh:mm)</string>
     <string name="yyyy_mm_dd">*(yyyy-mm-dd)</string>
+    <string name="_12">12€</string>
+    <string name="lagarto_ib_rico_con_sal_rosa">Lagarto ibérico con sal rosa</string>
+    <string name="tortilla_de_perretxicos_al_ajillo">Tortilla de perretxicos al ajillo</string>
+    <string name="_10">10€</string>
+    <string name="setas_empanadas_con_alioli">Setas empanadas con alioli</string>
+    <string name="especialidades">ESPECIALIDADES</string>
+    <string name="del_mar">DEL MAR</string>
+    <string name="calamares_a_la_andaluza_con_alioli">Calamares a la andaluza con alioli</string>
+    <string name="rabas_con_alioli_negro">Rabas con alioli negro</string>
+    <string name="pulpo_a_la_gallega">Pulpo a la gallega</string>
+    <string name="los_cl_sicos">LOS CLÁSICOS</string>
+    <string name="oreja_al_mojo_rojo">Oreja al mojo rojo</string>
+    <string name="callos_a_la_madrile_a">Callos a la madrileña</string>
+    <string name="choricitos_a_la_sidra">Choricitos a la sidra</string>
+    <string name="todo">TODO</string>
+    <string name="hacer_pedido">Hacer pedido</string>
+    <string name="hacer_pedido_a_domicilio">Hacer pedido a domicilio</string>
+    <string name="anular_reserva">Anular reserva</string>
+    <string name="total">TOTAL €:</string>
+    <string name="tramitar_pedido">Tramitar pedido</string>
+    <string name="ubicaci_n">Ubicación</string>
+    <string name="mesa">Mesa</string>
+    <string name="spmesa">spmesa</string>
+    <string name="seleccione_el_n_mero_de_mesa">Seleccione el número de mesa:</string>
+    <string name="tomar_nota">Tomar nota</string>
+    <string name="string_tomar_nota" />
+
 
     <string-array name="lista">
         <item>2</item>

@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Pantalla_cliente extends AppCompatActivity {
 
     TextView NoVerificado;
-    Button btnVerificar, btncerrar, btnbaja, btnedit, btnreserva, btnreservacomida, btnprueba, btnverreservasclient, btnanulreserv;
+    Button btnVerificar, btncerrar, btnbaja, btnedit, btnreserva, btnreservacomida, btnprueba, btnverreservasclient, btnanulreserv, btnadomi, btnamesa;
     FirebaseAuth fAuth;
 
     @Override
@@ -37,6 +37,8 @@ public class Pantalla_cliente extends AppCompatActivity {
         btnreservacomida = findViewById(R.id.btnreservarmyc);
         btnverreservasclient = findViewById(R.id.btnverreservascliente);
         btnanulreserv = findViewById(R.id.btnanularservaXD);
+        btnadomi = findViewById(R.id.btnpedadom);
+        btnamesa = findViewById(R.id.btnpedmes);
 
         btnprueba = findViewById(R.id.btnprueb);
 
@@ -118,6 +120,20 @@ public class Pantalla_cliente extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), AnularReserva.class));
+            }
+        });
+
+        btnadomi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), HacerPedidoDomicilio.class));
+            }
+        });
+
+        btnamesa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), HacerPedidoMesa.class));
             }
         });
 

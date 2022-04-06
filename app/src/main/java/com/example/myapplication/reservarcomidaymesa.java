@@ -30,7 +30,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -164,7 +163,6 @@ public class reservarcomidaymesa extends AppCompatActivity {
         int anio = cal.get(Calendar.YEAR);
         int mes =cal.get(Calendar.MONTH);
         int dia = cal.get(Calendar.DAY_OF_MONTH);
-        LocalDateTime today = LocalDateTime.now();
 
         DatePickerDialog dpd = new DatePickerDialog(reservarcomidaymesa.this, new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -196,7 +194,7 @@ public class reservarcomidaymesa extends AppCompatActivity {
 
     public  void aniadirreserva(String url){
         final String aux2 = fAuth.getCurrentUser().getEmail();
-        ArrayList<String> xa = new ArrayList<String>();
+        ArrayList<String> xa = new ArrayList<>();
         for (int i = 0; i < lista.getCount(); i++) {
                 xa.add((String) lista.getItemAtPosition(i));
         }

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pantalla_camarero extends AppCompatActivity {
 
-    Button btnverreservaC;
+    Button btnverreservaC,btnnota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class Pantalla_camarero extends AppCompatActivity {
         setContentView(R.layout.activity_pantalla_camarero);
 
         btnverreservaC = findViewById(R.id.verreservasC);
+        btnnota = findViewById(R.id.btntomarnota);
 
 
 
@@ -24,6 +25,13 @@ public class Pantalla_camarero extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), VerReservas.class));
+            }
+        });
+
+        btnnota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Tomarnota.class));
             }
         });
 
