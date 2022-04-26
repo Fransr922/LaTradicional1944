@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.168" />
 
     <TextView
-        android:id="@+id/titulhora"
+        android:id="@+id/tituloHora"
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/hora"
@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.168" />
 
     <TextView
-        android:id="@+id/titulopersonas"
+        android:id="@+id/titulousuario"
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/usuario"
@@ -68,7 +68,7 @@
         app:layout_constraintVertical_bias="0.168" />
 
     <Button
-        android:id="@+id/btnLoad"
+        android:id="@+id/btnverreservamesa"
         android:layout_width="201dp"
         android:layout_height="55dp"
         android:text="@string/ver_reservas_de_mesa"

@@ -20,17 +20,16 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
-public class Pantalla_trasportista extends AppCompatActivity {
+public class Visualizarpedidoaentregar extends AppCompatActivity {
 
-    ListView listaentreg2;
+    ListView listaentreg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla_trasportista);
+        setContentView(R.layout.activity_visualizarpedidoaentregar);
 
-        //btnverEnt2.findViewById(R.id.btnverentregitas2);
-        listaentreg2 = findViewById(R.id.listaaentregarsita2);
+        listaentreg = findViewById(R.id.listaaentregarsita);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.117/login/vercomidaaentregar.php", new Response.Listener<String>() {
@@ -42,7 +41,7 @@ public class Pantalla_trasportista extends AppCompatActivity {
                     try {
                         JSONArray ja = new JSONArray(response);
                         Log.i("sizejson", "" + ja.length());
-                        Cargarpedidis(ja);
+                        CargarListViewentreg(ja);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -53,22 +52,22 @@ public class Pantalla_trasportista extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Pantalla_trasportista.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(Visualizarpedidoaentregar.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
         queue.add(stringRequest);
-
     }
 
-    public void Cargarpedidis(JSONArray ja) {
+    public void CargarListViewentreg(JSONArray ja) {
+
         ArrayList<String> lista = new ArrayList<>();
 
         for (int i = 0; i < ja.length(); i += 4) {
 
             try {
 
-                lista.add(ja.getString(i) + "                             " + ja.getString(i + 1) + "                               " + ja.getString(i + 2) + "\n COMIDA: " + ja.getString(i + 3));
+                lista.add(ja.getString(i) + "          " + ja.getString(i + 1) + "          " + ja.getString(i + 2) + "\n COMIDA: " + ja.getString(i + 3));
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -76,7 +75,8 @@ public class Pantalla_trasportista extends AppCompatActivity {
         }
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
-        listaentreg2.setAdapter(adaptador);
+        listaentreg.setAdapter(adaptador);
+
     }
 
 }

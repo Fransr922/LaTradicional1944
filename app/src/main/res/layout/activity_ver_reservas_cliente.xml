@@ -43,7 +43,7 @@
 
 
     <TextView
-        android:id="@+id/titulhora"
+        android:id="@+id/tituloHora"
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/hora"

@@ -4,48 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pantalla_trasportista">
+    tools:context=".Visualizarpedidoapreparar">
 
     <ListView
-        android:id="@+id/listaaentregarsita2"
-        android:layout_width="402dp"
-        android:layout_height="610dp"
-        android:layout_marginBottom="4dp"
+        android:id="@+id/listaaentregarsita3"
+        android:layout_width="399dp"
+        android:layout_height="519dp"
         android:scrollbarSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titidpedaenteg3"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/titdirecaentreg2"
-        android:layout_width="100dp"
-        android:layout_height="28dp"
-        android:text="@string/direcci_n"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
-
-    <TextView
-        android:id="@+id/titidpedaenteg2"
-        android:layout_width="113dp"
-        android:layout_height="28dp"
-        android:text="@string/id_pedido"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
-
-    <TextView
-        android:id="@+id/titusuidaentreg2"
+        android:id="@+id/titusuidaentreg3"
         android:layout_width="112dp"
         android:layout_height="28dp"
         android:text="@string/id_usuariopo"
@@ -55,6 +27,29 @@
         app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.045" />
+
+    <TextView
+        android:id="@+id/titidpedaenteg3"
+        android:layout_width="113dp"
+        android:layout_height="28dp"
+        android:text="@string/id_pedido"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045" />
+
+    <Button
+        android:id="@+id/btnhihi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/atr_s"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaaentregarsita3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

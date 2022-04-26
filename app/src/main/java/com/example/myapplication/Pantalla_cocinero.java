@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pantalla_cocinero extends AppCompatActivity {
 
-    Button vercomida;
+    Button vercomida, verdomi, vermesa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,9 @@ public class Pantalla_cocinero extends AppCompatActivity {
         setContentView(R.layout.activity_pantalla_cocinero);
 
         vercomida = findViewById(R.id.comidareservCoci);
+        verdomi = findViewById(R.id.btnvercomidaaprepararcam);
+        vermesa = findViewById(R.id.btnvercomidaaprepararcam2);
+
         vercomida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,5 +27,18 @@ public class Pantalla_cocinero extends AppCompatActivity {
             }
         });
 
+        verdomi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Visualizarpedidoapreparar.class));
+            }
+        });
+
+        vermesa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Visualizarpedidoaprepararmesa.class));
+            }
+        });
     }
 }

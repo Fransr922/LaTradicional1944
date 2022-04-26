@@ -4,42 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pantalla_cocinero">
+    tools:context=".Visualizartodosmispedidos">
 
     <Button
-        android:id="@+id/btnvercomidaaprepararcam2"
+        android:id="@+id/btnpedidoscli1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ver_comida_a_mesa"
+        android:text="@string/ver_mis_pedidos_a_mesa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.286" />
 
     <Button
-        android:id="@+id/comidareservCoci"
+        android:id="@+id/btnpedidclie2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ver_comida_reservada"
+        android:text="@string/ver_mis_pedidos_a_domicilio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.371" />
+        app:layout_constraintVertical_bias="0.437" />
 
     <Button
-        android:id="@+id/btnvercomidaaprepararcam"
+        android:id="@+id/btnatrassit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ver_comida_a_domicilio"
+        android:text="@string/atr_s"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521" />
-
+        app:layout_constraintVertical_bias="0.62" />
 </androidx.constraintlayout.widget.ConstraintLayout>

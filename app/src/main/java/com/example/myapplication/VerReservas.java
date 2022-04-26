@@ -36,7 +36,7 @@ public class VerReservas extends AppCompatActivity {
         listaresultado = findViewById(R.id.lvLista);
         listaresultado2 = findViewById(R.id.lvLista2);
 
-        cargar = findViewById(R.id.btnLoad);
+        cargar = findViewById(R.id.btnverreservamesa);
         cargar2 =findViewById(R.id.btnLoad2);
 
         cargar.setOnClickListener(new View.OnClickListener() {

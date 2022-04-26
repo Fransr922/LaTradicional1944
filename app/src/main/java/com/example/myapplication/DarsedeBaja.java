@@ -1,14 +1,14 @@
 package com.example.myapplication;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -42,7 +42,7 @@ public class DarsedeBaja extends AppCompatActivity {
         btnacept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                baja("http://192.168.68.106/login/dardebaja.php");
+                baja("http://127.0.0.1/login/dardebaja.php");
             }
         });
 

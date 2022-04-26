@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pantalla_trasportista">
+    tools:context=".Visualizarpedidoaentregar">
 
     <ListView
-        android:id="@+id/listaaentregarsita2"
+        android:id="@+id/listaaentregarsita"
         android:layout_width="402dp"
         android:layout_height="610dp"
         android:layout_marginBottom="4dp"
@@ -19,33 +19,33 @@
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/titdirecaentreg2"
+        android:id="@+id/titdirecaentreg"
         android:layout_width="100dp"
         android:layout_height="28dp"
         android:text="@string/direcci_n"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.490"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.126" />
 
     <TextView
-        android:id="@+id/titidpedaenteg2"
+        android:id="@+id/titidpedaenteg"
         android:layout_width="113dp"
         android:layout_height="28dp"
         android:text="@string/id_pedido"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.097"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.126" />
 
     <TextView
-        android:id="@+id/titusuidaentreg2"
+        android:id="@+id/titusuidaentreg"
         android:layout_width="112dp"
         android:layout_height="28dp"
         android:text="@string/id_usuariopo"

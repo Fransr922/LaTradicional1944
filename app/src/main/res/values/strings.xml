@@ -100,6 +100,21 @@
     <string name="seleccione_el_n_mero_de_mesa">Seleccione el número de mesa:</string>
     <string name="tomar_nota">Tomar nota</string>
     <string name="string_tomar_nota" />
+    <string name="ver_pedidos">Ver pedidos</string>
+    <string name="coste">Coste</string>
+    <string name="ver_mis_pedidos">Ver mis pedidos</string>
+    <string name="hacer_pedido_a_mesa">Hacer pedido a mesa</string>
+    <string name="pedidos_a_domicilio">Pedidos a domicilio</string>
+    <string name="pedidos_a_mesa">Pedidos a mesa</string>
+    <string name="ver_repartos">Ver repartos</string>
+    <string name="direcci_n">Dirección</string>
+    <string name="id_pedido">ID pedido</string>
+    <string name="id_usuariopo">ID Usuario</string>
+    <string name="ver_comida_a_mesa">Ver comida a mesa</string>
+    <string name="ver_comida_a_domicilio">Ver comida a domicilio</string>
+    <string name="ver_mis_pedidos_a_mesa">Ver mis pedidos a mesa</string>
+    <string name="ver_mis_pedidos_a_domicilio">Ver mis pedidos a domicilio</string>
+    <string name="ingrese_id_pedido">Ingrese ID pedido</string>
 
 
     <string-array name="lista">
