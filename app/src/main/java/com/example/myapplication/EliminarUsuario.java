@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +26,7 @@ public class EliminarUsuario extends AppCompatActivity {
 
     EditText nombreelim,correoelim;
     Button btndelete,btnback;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +38,12 @@ public class EliminarUsuario extends AppCompatActivity {
         btndelete = findViewById(R.id.btnEliminar);
         btnback = findViewById(R.id.botonatras);
 
+
+
         btndelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                eliminar("http://192.168.68.106/login/eliminarusuario.php");
+                eliminar("http://192.168.68.117/login/eliminarusuario.php");
             }
         });
 
@@ -65,12 +69,18 @@ public class EliminarUsuario extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     Toast.makeText(getApplicationContext(), "Usuario eliminado correctame", Toast.LENGTH_SHORT).show();
-                    limpiar();
+
+                    String a = fAuth.getCurrentUser().getUid();
+                    Toast.makeText(getApplicationContext(), "El id es "+a, Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), Pantalla_admin.class));
+                    finish();
+                    //limpiar();
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Usuario no se ha podido eliminar", Toast.LENGTH_SHORT).show();
+                    limpiar();
                 }
             }) {
                 @Nullable

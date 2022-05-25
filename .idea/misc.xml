@@ -11,26 +11,37 @@
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_darsede_baja.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_editarcuenta.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_eliminar_usuario.xml" value="0.25" />
-        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_hacer_pedido_domicilio.xml" value="0.2796875" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_hacer_pedido_domicilio.xml" value="0.33" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_hacer_pedido_domiciliodos.xml" value="0.2796875" />
-        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_hacer_pedido_mesa.xml" value="0.2796875" />
-        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_iniciarsesion.xml" value="0.33" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_hacer_pedido_mesa.xml" value="0.33" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_iniciarsesion.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_admin.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_camarero.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_cliente.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_cocinero.xml" value="0.25" />
-        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_trasportista.xml" value="0.13518518518518519" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_pantalla_trasportista.xml" value="0.33" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_prueba.xml" value="0.22" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_registrar.xml" value="0.33" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_reservarcomidaymesa.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_reservarmesa.xml" value="0.25" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_reservarmesaycomida.xml" value="0.22" />
-        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_tomarnota.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_tomarnota.xml" value="0.33" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_ver_comida_reservada.xml" value="0.33" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_ver_reservas.xml" value="0.33" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_ver_reservas_cliente.xml" value="0.33" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_verpedidoclienteadomi.xml" value="0.2546875" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_visualizarpedidoaentregar.xml" value="0.2796875" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_visualizarpedidoapreparar.xml" value="0.25" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_visualizarpedidoaprepararmesa.xml" value="0.21458333333333332" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_visualizarpedidocliente.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_visualizarpedidos.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_visualizarpedidos_admin.xml" value="0.25" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/activity_visualizartodosmispedidos.xml" value="0.2546875" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/menu.xml" value="0.2796875" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/prrrrrrrueba.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/reservas.xml" value="0.28703703703703703" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/layout/toolbar.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/menu/menu.xml" value="0.33" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/LaTradicional1944/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.273" />
         <entry key="..\:/Users/frans/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.33" />
       </map>

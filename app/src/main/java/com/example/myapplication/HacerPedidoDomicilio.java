@@ -270,7 +270,14 @@ public class HacerPedidoDomicilio extends AppCompatActivity {
 
                 for (int i = 0; i < listacomida.getAdapter().getCount(); i++) {
                     //txt.setText((String)lista.getItemAtPosition(i));
-                    textoaux.setText(textoaux.getText() + " " + (String) listacomida.getItemAtPosition(i));
+
+                    //poner coma a comida
+                    if(i==0){
+                        textoaux.setText(textoaux.getText() + " " + (String) listacomida.getItemAtPosition(i));
+                    }else{
+                        textoaux.setText(textoaux.getText() + ", " + (String) listacomida.getItemAtPosition(i));
+                    }
+
                 }
 
                 if (ubi.getText().toString().equals("")) {
@@ -279,8 +286,8 @@ public class HacerPedidoDomicilio extends AppCompatActivity {
                     if (textoaux.getText().toString().equals("")) {
                         Toast.makeText(HacerPedidoDomicilio.this, "Pida comida", Toast.LENGTH_SHORT).show();
                     } else {
-                        aniadirenbbdd("http://192.168.68.106/login/pedidosadomicilio.php?direccion=" + ubi.getText().toString() + "" + "&comida=" + textoaux.getText() + "");
-                        startActivity(new Intent(getApplicationContext(), HacerPedidoDomiciliodos.class));
+                        aniadirenbbdd("http://192.168.68.117/login/pedidosadomicilio.php?direccion=" + ubi.getText().toString() + "" + "&comida=" + textoaux.getText() + "&coste=" + aux.getText() + "");
+
                     }
 
                 }
@@ -298,18 +305,18 @@ public class HacerPedidoDomicilio extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                if (response.equalsIgnoreCase("Pedido a domicilio guardado")) {
-                    //Toast.makeText(getApplicationContext(), "Reserva realizada", Toast.LENGTH_SHORT).show();
+                if (response.equalsIgnoreCase("Pedido a domicilio realizado")) {
+                    Toast.makeText(getApplicationContext(), "Pedido a domicilio realizado", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                    finish();
+
+                } else {
+                    Toast.makeText(HacerPedidoDomicilio.this, "No se ha podido realizar pedido", Toast.LENGTH_SHORT).show();
                     textoaux.setText("");
                     ubi.setText("");
                     aux.setText("");
                     ADPcomida.clear();
                     suma = 0;
-
-
-                } else {
-                    Toast.makeText(HacerPedidoDomicilio.this, response, Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(Reservarmesa.this, "No se realizar reserva", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -317,7 +324,7 @@ public class HacerPedidoDomicilio extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(HacerPedidoDomicilio.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(HacerPedidoDomicilio.this, "No se ha podido realizar pedido", Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override

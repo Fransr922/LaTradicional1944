@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Pantalla_cliente extends AppCompatActivity {
 
     TextView NoVerificado;
-    Button btnVerificar, btncerrar, btnbaja, btnedit, btnreserva, btnreservacomida, btnprueba, btnverreservasclient, btnanulreserv, btnadomi, btnamesa;
+    Button btnVerificar, btncerrar, btnbaja, btnedit, btnreserva, btnreservacomida, btnprueba, btnverreservasclient, btnanulreserv, btnadomi, btnamesa, btnvermispedidos;
     FirebaseAuth fAuth;
 
     @Override
@@ -39,7 +39,7 @@ public class Pantalla_cliente extends AppCompatActivity {
         btnanulreserv = findViewById(R.id.btnanularservaXD);
         btnadomi = findViewById(R.id.btnpedadom);
         btnamesa = findViewById(R.id.btnpedmes);
-
+        btnvermispedidos = findViewById(R.id.btnverpedklk);
         btnprueba = findViewById(R.id.btnprueb);
 
         NoVerificado = findViewById(R.id.txtNoverificado);
@@ -137,8 +137,14 @@ public class Pantalla_cliente extends AppCompatActivity {
             }
         });
 
+        btnvermispedidos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Visualizartodosmispedidos.class));
+            }
+        });
+
 
     }
-
 
 }

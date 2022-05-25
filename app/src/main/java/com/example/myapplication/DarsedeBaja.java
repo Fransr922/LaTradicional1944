@@ -1,14 +1,14 @@
 package com.example.myapplication;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -42,7 +42,7 @@ public class DarsedeBaja extends AppCompatActivity {
         btnacept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                baja("http://192.168.68.106/login/dardebaja.php");
+                baja("http://192.168.68.117/login/dardebaja.php");
             }
         });
 
@@ -64,11 +64,16 @@ public class DarsedeBaja extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Toast.makeText(getApplicationContext(), "Usuario eliminado correctame", Toast.LENGTH_SHORT).show();
-                    fAuth.getCurrentUser().delete();
-                    FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(getApplicationContext(), iniciarsesion.class));
-                    finish();
+
+                    if (response.equalsIgnoreCase("Se ha dado de baja correctamente")) {
+                        Toast.makeText(getApplicationContext(), "Usuario eliminado correctame", Toast.LENGTH_SHORT).show();
+                        fAuth.getCurrentUser().delete();
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(), iniciarsesion.class));
+                        finish();
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Correo incorrecto", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }, new Response.ErrorListener() {
                 @Override

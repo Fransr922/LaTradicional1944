@@ -1,18 +1,15 @@
 package com.example.myapplication;
 
-import static android.content.ContentValues.TAG;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.util.PatternsCompat;
-
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.PatternsCompat;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -21,10 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,6 +27,7 @@ import java.util.regex.Pattern;
 public class Dardealta extends AppCompatActivity {
 
     EditText altaNom, altaAp,altaCorr,altaCont,altatelf,altarol;
+    TextView ddprueb;
     Button btnAdd, btnback;
     FirebaseAuth fAuth;
     Pattern caract = Pattern.compile(".{9}");
@@ -49,23 +44,29 @@ public class Dardealta extends AppCompatActivity {
         altaCont = findViewById(R.id.altaContrasenia);
         altatelf = findViewById(R.id.altaTelefono);
         altarol = findViewById(R.id.altaRol);
+
+        ddprueb = findViewById(R.id.DDprueb);
+
         fAuth = FirebaseAuth.getInstance();
 
         btnAdd =findViewById(R.id.btnAgregar);
         btnback = findViewById(R.id.btnatras);
 
+
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Agregar("http://192.168.68.106/login/dar_de_alta.php");
+                Agregar("http://192.168.68.117/login/dar_de_alta.php");
             }
         });
 
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Pantalla_admin.class));
-                finish();
+                //startActivity(new Intent(getApplicationContext(), Pantalla_admin.class));
+                onBackPressed();
+                //finish();
+
             }
         });
 
@@ -103,7 +104,7 @@ public class Dardealta extends AppCompatActivity {
 
                         fAuth.createUserWithEmailAndPassword(correoFA, contrasFA).addOnCompleteListener(task -> {
 
-                            if (task.isSuccessful()) {
+                            /*if (task.isSuccessful()) {
                                 FirebaseUser Muser = fAuth.getCurrentUser();
                                 Muser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -111,27 +112,32 @@ public class Dardealta extends AppCompatActivity {
                                         Toast.makeText(Dardealta.this, "Dado de alta", Toast.LENGTH_SHORT).show();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
+                                    @SuppressLint("SetTextI18n")
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         Log.d(TAG, "Error: no dado de alta" + e.getMessage());
+                                        ddprueb.setText("Nok");
                                     }
                                 });
 
                             } else {
                                 Toast.makeText(Dardealta.this, "Error !" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
+                            }*/
 
                         });
 
                         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                            @SuppressLint("SetTextI18n")
                             @Override
                             public void onResponse(String response) {
                                 if (response.equalsIgnoreCase("dado de alta")) {
                                     Toast.makeText(getApplicationContext(), "Agregado", Toast.LENGTH_SHORT).show();
+                                    ddprueb.setText("ok");
 
                                 } else {
                                     Toast.makeText(Dardealta.this, response, Toast.LENGTH_SHORT).show();
                                     Toast.makeText(Dardealta.this, "No se puede agregar", Toast.LENGTH_SHORT).show();
+                                    ddprueb.setText("Nok");
                                 }
                             }
                         }, new Response.ErrorListener() {

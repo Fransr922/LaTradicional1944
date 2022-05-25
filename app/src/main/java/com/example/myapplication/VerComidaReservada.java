@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 public class VerComidaReservada extends AppCompatActivity {
 
     ListView listacomi;
+    Button btnVCR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +34,10 @@ public class VerComidaReservada extends AppCompatActivity {
         setContentView(R.layout.activity_ver_comida_reservada);
 
         listacomi = findViewById(R.id.lvListaComi);
+        btnVCR = findViewById(R.id.buttonatrasVCR);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.106/login/vercomida.php", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.117/login/vercomida.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -57,6 +62,13 @@ public class VerComidaReservada extends AppCompatActivity {
         });
 
         queue.add(stringRequest);
+
+        btnVCR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Pantalla_cocinero.class));
+            }
+        });
     }
 
     public void CargarListViewComi(JSONArray ja) {

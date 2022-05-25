@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Pantalla_admin extends AppCompatActivity {
 
     TextView NoVerificado;
-    Button btnVerificar, btncerrar, btnAlta, btndeleteusu, btnbuscarusu, btbverreservs;
+    Button btnVerificar, btncerrar, btnAlta, btndeleteusu, btnbuscarusu, btbverreservs, btnverpedadmin;
     FirebaseAuth fAuth;
 
     @Override
@@ -35,6 +35,7 @@ public class Pantalla_admin extends AppCompatActivity {
         btndeleteusu = findViewById(R.id.btnElimUsu);
         btnbuscarusu = findViewById(R.id.btnbuscarusuario);
         btbverreservs = findViewById(R.id.btnverreservasadm);
+        btnverpedadmin = findViewById(R.id.btnverpedad);
 
         NoVerificado = findViewById(R.id.txtNoverificado);
         fAuth = FirebaseAuth.getInstance();
@@ -100,6 +101,14 @@ public class Pantalla_admin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), VerReservas.class));
+            }
+        });
+
+        //ver pedidos a mesa
+        btnverpedadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), VisualizarpedidosAdmin.class));
             }
         });
     }

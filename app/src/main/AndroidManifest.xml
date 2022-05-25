@@ -16,6 +16,30 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".Verpedidoclienteadomi"
+            android:exported="false" />
+        <activity
+            android:name=".Visualizartodosmispedidos"
+            android:exported="false" />
+        <activity
+            android:name=".Visualizarpedidoaprepararmesa"
+            android:exported="false" />
+        <activity
+            android:name=".Visualizarpedidoapreparar"
+            android:exported="false" />
+        <activity
+            android:name=".Visualizarpedidoaentregar"
+            android:exported="false" />
+        <activity
+            android:name=".Visualizarpedidocliente"
+            android:exported="false" />
+        <activity
+            android:name=".VisualizarpedidosAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".Visualizarpedidos"
+            android:exported="false" />
+        <activity
             android:name=".Tomarnota"
             android:exported="false" />
         <activity
@@ -44,9 +68,6 @@
             android:exported="false" />
         <activity
             android:name=".Prueba"
-            android:exported="false" />
-        <activity
-            android:name=".Reservarmesaycomida"
             android:exported="false" />
         <activity
             android:name=".Reservarmesa"
