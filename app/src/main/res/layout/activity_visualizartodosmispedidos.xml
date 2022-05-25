@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colormarronlatra"
     tools:context=".Visualizartodosmispedidos">
 
     <Button
@@ -16,7 +17,11 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.286" />
+        app:layout_constraintVertical_bias="0.286"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/btnpedidclie2"
@@ -28,7 +33,11 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.437"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/btnatrassit"
@@ -40,5 +49,9 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.62"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

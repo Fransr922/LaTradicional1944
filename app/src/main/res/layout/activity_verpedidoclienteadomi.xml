@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colormarronlatra"
     tools:context=".Verpedidoclienteadomi">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/id_pedido"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.295"
@@ -22,6 +24,7 @@
         android:id="@+id/listpedidosadomi"
         android:layout_width="401dp"
         android:layout_height="470dp"
+        android:cacheColorHint="@color/white"
         android:scrollbarSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +39,7 @@
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/direcci_n"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.695"
@@ -43,30 +47,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.167" />
 
+
     <Button
         android:id="@+id/btnvermispedadomi"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
         android:text="@string/ver_pedidos"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047" />
 
     <Button
         android:id="@+id/btnirpatradomi"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
         android:text="@string/atr_s"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintHorizontal_bias="0.836"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047" />
-
 
     <Button
         android:id="@+id/btnnulpediadomi"
@@ -79,7 +91,11 @@
         app:layout_constraintHorizontal_bias="0.776"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listpedidosadomi"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/anulidadom"
@@ -91,12 +107,15 @@
         android:hint="@string/ingrese_id_pedido"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listpedidosadomi"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:textStyle="bold"
+        android:textColor="@color/colorrojolatra"
+        android:textColorHint="@color/colorrojolatra"
+        android:backgroundTint="@color/colorrojolatra"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

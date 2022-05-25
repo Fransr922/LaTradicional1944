@@ -104,6 +104,7 @@ public class Pantalla_admin extends AppCompatActivity {
             }
         });
 
+        //ver pedidos a mesa
         btnverpedadmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

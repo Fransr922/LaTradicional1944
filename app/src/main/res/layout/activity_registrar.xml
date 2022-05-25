@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activityregistrarse"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colormarronlatra"
@@ -46,7 +47,7 @@
         android:autofillHints=""
         android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
-        android:fontFamily="@font/cinzel_decorative"
+        android:fontFamily="sans-serif-medium"
         android:hint="@string/contrase_a"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -55,10 +56,29 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.500" />
+        app:layout_constraintTop_toBottomOf="@+id/correo"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <EditText
+        android:id="@+id/contrasenia2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:backgroundTint="@color/colorrojolatra"
+        android:ems="10"
+        android:fontFamily="sans-serif-medium"
+        android:hint="@string/repetir_contrase_a"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="@color/colorrojolatra"
+        android:textColorHint="@color/colorrojolatra"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contrasenia"
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/telefono"
@@ -67,7 +87,7 @@
         android:autofillHints=""
         android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
-        android:fontFamily="@font/cinzel_decorative"
+        android:fontFamily="sans-serif-medium"
         android:hint="@string/tel_fono"
         android:inputType="textPersonName"
         android:maxLength="9"
@@ -77,10 +97,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.600" />
+        app:layout_constraintTop_toBottomOf="@+id/contrasenia2"
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/correo"
@@ -89,7 +108,7 @@
         android:autofillHints=""
         android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
-        android:fontFamily="@font/cinzel_decorative"
+        android:fontFamily="sans-serif-medium"
         android:hint="@string/correo"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -99,10 +118,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.400" />
+        app:layout_constraintTop_toBottomOf="@+id/apellidos"
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/apellidos"
@@ -111,7 +129,7 @@
         android:autofillHints=""
         android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
-        android:fontFamily="@font/cinzel_decorative"
+        android:fontFamily="sans-serif-medium"
         android:hint="@string/apellidos"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -120,10 +138,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.300" />
+        app:layout_constraintTop_toBottomOf="@+id/nombre"
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/nombre"
@@ -132,7 +149,7 @@
         android:autofillHints=""
         android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
-        android:fontFamily="@font/cinzel_decorative"
+        android:fontFamily="sans-serif-medium"
         android:hint="@string/nombre"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -141,9 +158,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.200" />
+        app:layout_constraintVertical_bias="0.073" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

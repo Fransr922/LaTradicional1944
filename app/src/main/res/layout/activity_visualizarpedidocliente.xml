@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colormarronlatra"
     tools:context=".Visualizarpedidocliente">
 
     <EditText
@@ -16,12 +17,15 @@
         android:hint="@string/ingrese_id_pedido"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textColorHint="#757575"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listpedidos" />
+        app:layout_constraintTop_toBottomOf="@+id/listpedidos"
+        android:textStyle="bold"
+        android:textColor="@color/colorrojolatra"
+        android:textColorHint="@color/colorrojolatra"
+        android:backgroundTint="@color/colorrojolatra"/>
 
     <Button
         android:id="@+id/btnnulpediames"
@@ -33,13 +37,18 @@
         app:layout_constraintHorizontal_bias="0.807"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listpedidos"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.389"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/miidped"
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/id_pedido"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.113"
@@ -51,6 +60,7 @@
         android:id="@+id/listpedidos"
         android:layout_width="420dp"
         android:layout_height="488dp"
+        android:cacheColorHint="@color/white"
         android:scrollbarSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,6 +75,7 @@
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/mesa"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.46"
@@ -77,6 +88,7 @@
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/coste"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.794"
@@ -86,24 +98,32 @@
 
     <Button
         android:id="@+id/btnvermisped"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
         android:text="@string/ver_pedidos"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047" />
 
     <Button
         android:id="@+id/btnirpatr"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
         android:text="@string/atr_s"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.771"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.047" />

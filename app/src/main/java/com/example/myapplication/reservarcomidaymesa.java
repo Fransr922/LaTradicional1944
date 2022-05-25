@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -38,8 +37,14 @@ import java.util.Map;
 
 public class reservarcomidaymesa extends AppCompatActivity {
 
-    TextView fe,ho,obj1,obj2,obj3,obj4, txt;
-    Button ani1,ani2,ani3,ani4, btnreservar, btnaattrraass;
+    TextView fe,ho, txt;
+
+    //Para la carta
+    TextView carT1, carT2,carT3, carT4,carT5, carT6,carT7, carT8,carT9, preC1,preC2, preC3,preC4, preC5, preC6,preC7,preC8,preC9;
+    Button comprA1, comprA2, comprA3, comprA4, comprA5, comprA6, comprA7, comprA8, comprA9;
+
+
+    Button btnreservar, btnaattrraass;
 
     FirebaseAuth fAuth;
 
@@ -59,26 +64,53 @@ public class reservarcomidaymesa extends AppCompatActivity {
 
         txt = findViewById(R.id.txttttt);
 
-        obj1 = findViewById(R.id.com1);
-        obj2 = findViewById(R.id.com2);
-        obj3 = findViewById(R.id.com3);
-        obj4 = findViewById(R.id.com4);
-
-        ani1 = findViewById(R.id.an1);
-        ani2 = findViewById(R.id.an2);
-        ani3 = findViewById(R.id.an3);
-        ani4 = findViewById(R.id.an4);
         btnreservar = findViewById(R.id.btnreservamesaycomida);
         btnaattrraass = findViewById(R.id.btnatrss);
 
+        //Cosas para añadir comida
+        ////////////////////////////
+        carT1 = findViewById(R.id.carta1234);
+        carT2= findViewById(R.id.carta2234);
+        carT3= findViewById(R.id.carta3234);
+        carT4= findViewById(R.id.carta4234);
+        carT5= findViewById(R.id.carta5234);
+        carT6= findViewById(R.id.carta6234);
+        carT7= findViewById(R.id.carta7234);
+        carT8= findViewById(R.id.carta8234);
+        carT9= findViewById(R.id.carta9234);
+
+        preC1 = findViewById(R.id.precio1234);
+        preC2 = findViewById(R.id.precio2234);
+        preC3 = findViewById(R.id.precio3234);
+        preC4 = findViewById(R.id.precio4234);
+        preC5 = findViewById(R.id.precio5234);
+        preC6 = findViewById(R.id.precio6234);
+        preC7 = findViewById(R.id.precio7234);
+        preC8 = findViewById(R.id.precio8234);
+        preC9 = findViewById(R.id.precio9234);
+
+        comprA1 = findViewById(R.id.comp1234);
+        comprA2 = findViewById(R.id.comp2234);
+        comprA3 = findViewById(R.id.comp3234);
+        comprA4 = findViewById(R.id.comp4234);
+        comprA5 = findViewById(R.id.comp5234);
+        comprA6 = findViewById(R.id.comp6234);
+        comprA7 = findViewById(R.id.comp7234);
+        comprA8 = findViewById(R.id.comp8234);
+        comprA9 = findViewById(R.id.comp9234);
+        ////////////////////////
+
         fAuth = FirebaseAuth.getInstance();
 
+
+        //listacomida
         lista = findViewById(R.id.listacomidaselect);
         items = new ArrayList<>();
         ADP = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, items);
         lista.setAdapter(ADP);
         lista.setBackgroundColor(Color.DKGRAY);
 
+        //Spiner
         Spersons = findViewById(R.id.spinnerpeople);
         ArrayList<Integer> Personas = new ArrayList<>();
         Personas.add(2);
@@ -90,7 +122,6 @@ public class reservarcomidaymesa extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 int per = (int) Spersons.getAdapter().getItem(i);
-                //Toast.makeText(reservarcomidaymesa.this, "Reserva realizada " + per,Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -99,38 +130,81 @@ public class reservarcomidaymesa extends AppCompatActivity {
             }
         });
 
-        ani1.setOnClickListener(new View.OnClickListener() {
+
+        //Botones para añadir comida
+        comprA1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                items.add(obj1.getText().toString());
+                items.add(carT1.getText().toString());
                 ADP.notifyDataSetChanged();
             }
         });
 
-        ani2.setOnClickListener(new View.OnClickListener() {
+        comprA2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                items.add(obj2.getText().toString());
+                items.add(carT2.getText().toString());
                 ADP.notifyDataSetChanged();
             }
         });
 
-        ani3.setOnClickListener(new View.OnClickListener() {
+        comprA3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                items.add(obj3.getText().toString());
+                items.add(carT3.getText().toString());
                 ADP.notifyDataSetChanged();
             }
         });
 
-        ani4.setOnClickListener(new View.OnClickListener() {
+        comprA4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                items.add(obj4.getText().toString());
+                items.add(carT4.getText().toString());
                 ADP.notifyDataSetChanged();
             }
         });
 
+        comprA5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                items.add(carT5.getText().toString());
+                ADP.notifyDataSetChanged();
+            }
+        });
+
+        comprA6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                items.add(carT6.getText().toString());
+                ADP.notifyDataSetChanged();
+            }
+        });
+
+        comprA7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                items.add(carT7.getText().toString());
+                ADP.notifyDataSetChanged();
+            }
+        });
+
+        comprA8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                items.add(carT8.getText().toString());
+                ADP.notifyDataSetChanged();
+            }
+        });
+
+        comprA9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                items.add(carT9.getText().toString());
+                ADP.notifyDataSetChanged();
+            }
+        });
+
+        //Reserva
         btnreservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -138,11 +212,22 @@ public class reservarcomidaymesa extends AppCompatActivity {
                 //Toast.makeText(getApplicationContext(), "Total number of Items are:" + lista.getAdapter().getCount() , Toast.LENGTH_LONG).show();
                 for (int i = 0; i < lista.getAdapter().getCount(); i++) {
                     //txt.setText((String)lista.getItemAtPosition(i));
-                    txt.setText(txt.getText() + " " + (String)lista.getItemAtPosition(i));
+
+                    //poner coma a comida
+                    if (i == 0) {
+                        txt.setText(txt.getText() + " " + (String) lista.getItemAtPosition(i));
+                    } else {
+                        txt.setText(txt.getText() + ", " + (String) lista.getItemAtPosition(i));
+                    }
+
+
                 }
 
-                aniadirreserva("http://192.168.68.106/login/reservarcomida.php?fecha="+fe.getText()+""+"&hora="+ho.getText()+""+"&personas="+Spersons.getSelectedItem().toString()+""+"&comida="+txt.getText()+"");
-
+                if (txt.getText().toString().equals("")) {
+                    Toast.makeText(reservarcomidaymesa.this, "Selecciona comida", Toast.LENGTH_SHORT).show();
+                } else {
+                    aniadirreserva("http://192.168.68.117/login/reservarcomida.php?fecha=" + fe.getText() + "" + "&hora=" + ho.getText() + "" + "&personas=" + Spersons.getSelectedItem().toString() + "" + "&comida=" + txt.getText() + "");
+                }
             }
         });
 
@@ -156,6 +241,7 @@ public class reservarcomidaymesa extends AppCompatActivity {
 
     }
 
+    //Cossas para seleccionar fecha y hora
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void abrirCalendar(View view) {
 
@@ -203,7 +289,7 @@ public class reservarcomidaymesa extends AppCompatActivity {
             System.out.println(xa.get(i));
         }
 
-        if (fe.getText().toString().equals("Fecha") || ho.getText().toString().equals("Hora") || txt.getText().toString().equals("")){
+        if (fe.getText().toString().equals("Fecha") || ho.getText().toString().equals("Hora") /*|| txt.getText().toString().equals("")*/){
             Toast.makeText(this, "Campos vacíos", Toast.LENGTH_SHORT).show();
         }else {
 
@@ -213,12 +299,21 @@ public class reservarcomidaymesa extends AppCompatActivity {
 
 
                     if (response.equalsIgnoreCase("Reserva realizada")) {
-                        //Toast.makeText(getApplicationContext(), "Reserva realizada", Toast.LENGTH_SHORT).show();
-                        limpiaar();
+                        Toast.makeText(getApplicationContext(), "Reserva realizada", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                        finish();
 
                     } else {
-                        Toast.makeText(reservarcomidaymesa.this, response, Toast.LENGTH_SHORT).show();
-                        //Toast.makeText(Reservarmesa.this, "No se realizar reserva", Toast.LENGTH_SHORT).show();
+
+                        if (response.equalsIgnoreCase("Ya hay reservas en ese momento")) {
+                            Toast.makeText(reservarcomidaymesa.this, "No hay mesas disponibles para el dia "+fe.getText().toString()+" a la hora "+ho.getText().toString()+".", Toast.LENGTH_SHORT).show();
+                        }else{
+                            if (response.equalsIgnoreCase("No hay mesas libres para esa hora")) {
+                                Toast.makeText(reservarcomidaymesa.this, "No hay mesas disponibles para el dia "+fe.getText().toString()+" a la hora "+ho.getText().toString()+".", Toast.LENGTH_SHORT).show();
+                            }else{
+                                Toast.makeText(reservarcomidaymesa.this, "Error: No se puede realizar reserva", Toast.LENGTH_SHORT).show();
+                            }
+                        }
                     }
 
 
@@ -242,16 +337,5 @@ public class reservarcomidaymesa extends AppCompatActivity {
 
         }
     }
-
-    @SuppressLint("SetTextI18n")
-    private void limpiaar(){
-        txt.setText("");
-        fe.setText("Fecha");
-        ho.setText("Hora");
-        //items.clear();
-        ADP.clear();
-
-    }
-
 }
 

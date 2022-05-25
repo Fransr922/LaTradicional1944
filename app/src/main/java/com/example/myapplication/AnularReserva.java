@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,14 +26,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class AnularReserva extends AppCompatActivity {
     //verresservasparaanularreservas
 
-    Button vermireserva1, vermireserva2, anular;
+    Button vermireserva1, vermireserva2, anular, patrs;
     EditText anularfecha, anularhora;
     ListView listamireserva;
 
@@ -51,6 +54,7 @@ public class AnularReserva extends AppCompatActivity {
         vermireserva1 = findViewById(R.id.btnLoadanular1);
         vermireserva2 = findViewById(R.id.btnLoadanular2);
         anular = findViewById(R.id.btnanularreserva);
+        patrs = findViewById(R.id.btnpatrsjij);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -82,80 +86,116 @@ public class AnularReserva extends AppCompatActivity {
             }
         });
 
+        patrs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                finish();
+            }
+        });
+
     }
 
     public void anularserva() {
         final String fechita = anularfecha.getText().toString().trim();
         final String horita = anularhora.getText().toString().trim();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm", Locale.getDefault());
 
         if (fechita.isEmpty() || horita.isEmpty()) {
             Toast.makeText(getApplicationContext(), "Rellene campos", Toast.LENGTH_SHORT).show();
         } else {
 
-            if (!check.isChecked()) {
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.68.106/login/eliminarreserva.php", new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), "Reserva eliminada correctame", Toast.LENGTH_SHORT).show();
-                        //limpiar();
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-                    @Nullable
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
+            if(fechita.length()!=dateFormat.toPattern().length()){
+                Toast.makeText(getApplicationContext(), "Fecha mal introducida", Toast.LENGTH_SHORT).show();
+            }else {
+                if(horita.length()!=timeFormat.toPattern().length()){
+                    Toast.makeText(getApplicationContext(), "Hora mal introducida", Toast.LENGTH_SHORT).show();
+                }else {
 
-                        Map<String, String> params = new HashMap<>();
-                        params.put("fecha", anularfecha.getText().toString());
-                        params.put("hora", anularhora.getText().toString());
-                        return params;
-                    }
-                };
 
-                RequestQueue requestQueue = Volley.newRequestQueue(this);
-                requestQueue.add(stringRequest);
+                    if (!check.isChecked()) {
+                        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.68.117/login/eliminarreserva.php", new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
 
-            }else{
-                StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.68.106/login/eliminarreservacomida.php", new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), "Reserva eliminada correctame", Toast.LENGTH_SHORT).show();
-                        //limpiar();
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                }) {
-                    @Nullable
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
+                                if (response.equalsIgnoreCase("no se borra nada")) {
+                                    Toast.makeText(getApplicationContext(), "No existe reserva", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Reserva eliminada correctamente", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                                    finish();
+                                }
 
-                        Map<String, String> params = new HashMap<>();
-                        params.put("fecha", anularfecha.getText().toString());
-                        params.put("hora", anularhora.getText().toString());
-                        return params;
-                    }
-                };
 
-                RequestQueue requestQueue = Volley.newRequestQueue(this);
-                requestQueue.add(stringRequest);
+                                //limpiar();
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }) {
+                            @Nullable
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+
+                                Map<String, String> params = new HashMap<>();
+                                params.put("fecha", anularfecha.getText().toString());
+                                params.put("hora", anularhora.getText().toString());
+                                return params;
+                            }
+                        };
+
+                        RequestQueue requestQueue = Volley.newRequestQueue(this);
+                        requestQueue.add(stringRequest);
+
+                    } else {
+                        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.68.117/login/eliminarreservacomida.php", new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+
+                                if (response.equalsIgnoreCase("no se borra nada")) {
+                                    Toast.makeText(getApplicationContext(), "No existe reserva", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Reserva eliminada correctamente", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                                    finish();
+                                }
+                                //limpiar();
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }) {
+                            @Nullable
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+
+                                Map<String, String> params = new HashMap<>();
+                                params.put("fecha", anularfecha.getText().toString());
+                                params.put("hora", anularhora.getText().toString());
+                                return params;
+                            }
+                        };
+
+                        RequestQueue requestQueue = Volley.newRequestQueue(this);
+                        requestQueue.add(stringRequest);
+                    }
+
+                }
             }
-
-        }
+        }//else
     }
 
     public void vermireservita1() {
 
         final String aux2 = fAuth.getCurrentUser().getEmail();
-
+        //verresservasparaanularreservas.php
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.106/login/verresservasparaanularreservas.php?correo=" + aux2 + "", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.117/login/verreservascliente.php?correo=" + aux2 + "", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -208,7 +248,7 @@ public class AnularReserva extends AppCompatActivity {
         final String aux3 = fAuth.getCurrentUser().getEmail();
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.106/login/verreservasycomidacliente.php?correo=" + aux3 + "", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.117/login/verreservasycomidacliente.php?correo=" + aux3 + "", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

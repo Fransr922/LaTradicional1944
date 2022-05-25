@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activityARMklk"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colormarronlatra"
     tools:context=".AnularReserva">
 
     <ListView
@@ -11,10 +13,11 @@
         android:layout_width="400dp"
         android:layout_height="312dp"
         android:layout_marginBottom="228dp"
+        android:cacheColorHint="@color/white"
         android:scrollbarSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.407"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulhoraanular"
         app:layout_constraintVertical_bias="0.0"
@@ -25,76 +28,89 @@
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/personasaaaa"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.194" />
 
     <TextView
         android:id="@+id/titulofechaanular"
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/fecha"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.195" />
 
     <TextView
         android:id="@+id/titulhoraanular"
         android:layout_width="66dp"
         android:layout_height="16dp"
         android:text="@string/hora"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
+        app:layout_constraintVertical_bias="0.195" />
 
     <Button
         android:id="@+id/btnLoadanular1"
         android:layout_width="161dp"
         android:layout_height="72dp"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
         android:text="@string/ver_mis_reservas_de_mesa"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.057" />
 
     <Button
         android:id="@+id/btnLoadanular2"
-        android:layout_width="161dp"
-        android:layout_height="72dp"
+        android:layout_width="201dp"
+        android:layout_height="80dp"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
         android:text="@string/ver_mis_reservas_de_mesa_y_comida"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <EditText
         android:id="@+id/anularfecha"
         android:layout_width="136dp"
         android:layout_height="48dp"
         android:autofillHints=""
+        android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
         android:hint="@string/fecha"
         android:inputType="textPersonName"
-        android:textColorHint="#757575"
+        android:textColor="@color/colorrojolatra"
+        android:textColorHint="@color/colorrojolatra"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lvListaanular"
-        app:layout_constraintVertical_bias="0.072"
+        app:layout_constraintVertical_bias="0.12"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <EditText
@@ -102,47 +118,78 @@
         android:layout_width="136dp"
         android:layout_height="48dp"
         android:autofillHints=""
+        android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
         android:hint="@string/hora"
         android:inputType="textPersonName"
-        android:textColorHint="#757575"
+        android:textColor="@color/colorrojolatra"
+        android:textColorHint="@color/colorrojolatra"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.865"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lvListaanular"
-        app:layout_constraintVertical_bias="0.072"
+        app:layout_constraintVertical_bias="0.12"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/btnanularreserva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
         android:text="@string/anular"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confcomida"
-        app:layout_constraintVertical_bias="0.264" />
+        app:layout_constraintVertical_bias="0.333" />
+
+    <Button
+        android:id="@+id/btnpatrsjij"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorrojolatra"
+        android:fontFamily="@font/cinzel_decorative"
+        android:text="@string/atr_s"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confcomida"
+        app:layout_constraintVertical_bias="0.333" />
 
     <CheckBox
         android:id="@+id/confcomida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorrojolatra"
         android:text="Reserva con comida"
+        android:textColor="@color/colorrojolatra"
+        android:textColorHint="@color/colorrojolatra"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/formatofecha"
-        app:layout_constraintVertical_bias="0.231" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <TextView
         android:id="@+id/formatofecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
+        android:backgroundTint="@color/colorrojolatra"
         android:text="@string/hh_mm"
+        android:textColor="@color/colorrojolatra"
+        android:textColorHint="@color/colorrojolatra"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/anularhora"
@@ -153,7 +200,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
+        android:backgroundTint="@color/colorrojolatra"
         android:text="@string/yyyy_mm_dd"
+        android:textColor="@color/colorrojolatra"
+        android:textColorHint="@color/colorrojolatra"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/anularfecha"

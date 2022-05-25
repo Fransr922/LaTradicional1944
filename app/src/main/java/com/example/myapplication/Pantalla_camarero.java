@@ -7,9 +7,12 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Pantalla_camarero extends AppCompatActivity {
 
-    Button btnverreservaC,btnnota,btnverpedidos;
+    Button btnverreservaC,btnnota,btnverpedidos, btncerrarC;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +22,10 @@ public class Pantalla_camarero extends AppCompatActivity {
         btnverreservaC = findViewById(R.id.verreservasC);
         btnnota = findViewById(R.id.btntomarnota);
         btnverpedidos = findViewById(R.id.btnverpeds);
+        btncerrarC = findViewById(R.id.btnLogoutCam);
 
 
+        fAuth = FirebaseAuth.getInstance();
 
         btnverreservaC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +45,15 @@ public class Pantalla_camarero extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Visualizarpedidos.class));
+            }
+        });
+
+        btncerrarC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), iniciarsesion.class));
+                finish();
             }
         });
 

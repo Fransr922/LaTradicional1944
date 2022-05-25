@@ -302,7 +302,14 @@ public class HacerPedidoMesa extends AppCompatActivity {
 
                 for (int i = 0; i < listacomida2.getAdapter().getCount(); i++) {
                     //txt.setText((String)lista.getItemAtPosition(i));
-                    textoaux2.setText(textoaux2.getText() + " " + (String) listacomida2.getItemAtPosition(i));
+
+                    //poner coma a comida
+                    if(i==0){
+                        textoaux2.setText(textoaux2.getText() + " " + (String) listacomida2.getItemAtPosition(i));
+                    }else{
+                        textoaux2.setText(textoaux2.getText() + ", " + (String) listacomida2.getItemAtPosition(i));
+                    }
+
                 }
 
                 if (textoaux2.getText().toString().equals("")) {
@@ -310,7 +317,7 @@ public class HacerPedidoMesa extends AppCompatActivity {
                 } else {
                     String kk = aux2.getText().toString();
                     int kk2 = Integer.parseInt(kk);
-                    aniadirenbbdd("http://192.168.68.106/login/pedidomesa.php?mesa=" + Smesas.getSelectedItem().toString() + "" + "&comida=" + textoaux2.getText() + "" + "&gasto=" + kk2 + "");
+                    aniadirenbbdd("http://192.168.68.117/login/pedidomesa.php?mesa=" + Smesas.getSelectedItem().toString() + "" + "&comida=" + textoaux2.getText() + "" + "&gasto=" + kk2 + "");
                     textoaux2.setText("");
                     aux2.setText("");
                     ADPcomida2.clear();
@@ -331,14 +338,14 @@ public class HacerPedidoMesa extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
-                if (response.equalsIgnoreCase("Pedido a domicilio guardado")) {
-                    //Toast.makeText(getApplicationContext(), "Reserva realizada", Toast.LENGTH_SHORT).show();
-
-
+                if (response.equalsIgnoreCase("Pedido a mesa realizado")) {
+                    Toast.makeText(getApplicationContext(), "Pedido a mesa realizado", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                    finish();
 
                 } else {
-                    Toast.makeText(HacerPedidoMesa.this, response, Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(Reservarmesa.this, "No se realizar reserva", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(HacerPedidoMesa.this, response, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No se ha podido realizar el pedido", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -346,7 +353,7 @@ public class HacerPedidoMesa extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(HacerPedidoMesa.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "No se ha podido realizar el pedido", Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override

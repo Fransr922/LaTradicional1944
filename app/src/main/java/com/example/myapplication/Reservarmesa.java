@@ -82,8 +82,9 @@ public class Reservarmesa extends AppCompatActivity {
         btnreservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 //Toast.makeText(getApplicationContext(),"Texto spinner:"+ Spersonas.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
-                incluirreserva("http://192.168.68.106/login/reservar.php?fecha="+tv.getText()+""+"&hora="+hr.getText()+""+"&personas="+Spersonas.getSelectedItem().toString()+"");
+                incluirreserva("http://192.168.68.117/login/reservar.php?fecha="+tv.getText()+""+"&hora="+hr.getText()+""+"&personas="+Spersonas.getSelectedItem().toString()+"");
             }
         });
 
@@ -137,32 +138,52 @@ public class Reservarmesa extends AppCompatActivity {
     private void incluirreserva(String url){
         final String aux2 = fAuth.getCurrentUser().getEmail();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if (response.equalsIgnoreCase("Reserva realizada")) {
-                    //Toast.makeText(getApplicationContext(), "Reserva realizada", Toast.LENGTH_SHORT).show();
+        if(tv.getText().toString().equals("Fecha")){
+            Toast.makeText(getApplicationContext(), "Seleccione Fecha", Toast.LENGTH_SHORT).show();
+        }else{
+            if(hr.getText().toString().equals("Hora")){
+                Toast.makeText(getApplicationContext(), "Seleccione Hora", Toast.LENGTH_SHORT).show();
+            }else{
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (response.equalsIgnoreCase("Reserva realizada")) {
+                            Toast.makeText(getApplicationContext(), "Reserva realizada", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                            finish();
 
-                } else {
-                    Toast.makeText(Reservarmesa.this, response, Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(Reservarmesa.this, "No se realizar reserva", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(Reservarmesa.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+                        } else {
+                            if (response.equalsIgnoreCase("Ya hay reservas en ese momento")) {
+                                Toast.makeText(Reservarmesa.this, "No hay mesas disponibles para el dia "+tv.getText().toString()+" a la hora "+hr.getText().toString()+".", Toast.LENGTH_SHORT).show();
+                            }else{
+                                if (response.equalsIgnoreCase("No hay mesas libres para esa hora")) {
+                                    Toast.makeText(Reservarmesa.this, "No hay mesas disponibles para el dia "+tv.getText().toString()+" a la hora "+hr.getText().toString()+".", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(Reservarmesa.this, "Error: No se puede realizar reserva", Toast.LENGTH_SHORT).show();
+                                }
 
-                Map<String, String> paramtros = new HashMap<>();
-                paramtros.put("correo", aux2);
-                return paramtros;
+                            }
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Reservarmesa.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+
+                        Map<String, String> paramtros = new HashMap<>();
+                        paramtros.put("correo", aux2);
+                        return paramtros;
+                    }
+                };
+                RequestQueue requestQueue = Volley.newRequestQueue(this);
+                requestQueue.add(stringRequest);
             }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+        }
+
+
     }
 }

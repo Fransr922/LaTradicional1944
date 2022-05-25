@@ -115,6 +115,10 @@
     <string name="ver_mis_pedidos_a_mesa">Ver mis pedidos a mesa</string>
     <string name="ver_mis_pedidos_a_domicilio">Ver mis pedidos a domicilio</string>
     <string name="ingrese_id_pedido">Ingrese ID pedido</string>
+    <string name="pantalla_cocinero">pantalla cocinero</string>
+    <string name="string_cerrar_sesi_n" />
+    <string name="repetir_contrase_a">Repetir contraseña</string>
+    <string name="altarol">altarol</string>
 
 
     <string-array name="lista">

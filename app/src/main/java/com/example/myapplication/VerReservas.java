@@ -1,11 +1,14 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,8 +27,9 @@ import java.util.ArrayList;
 
 public class VerReservas extends AppCompatActivity {
 
-    Button cargar,cargar2;
+    Button cargar,cargar2, pajtras;
     ListView listaresultado, listaresultado2;
+    TextView pr, pr2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,9 @@ public class VerReservas extends AppCompatActivity {
 
         listaresultado = findViewById(R.id.lvLista);
         listaresultado2 = findViewById(R.id.lvLista2);
+        pajtras = findViewById(R.id.btnpatkp);
+        pr = findViewById(R.id.RMprueba);
+        pr2 = findViewById(R.id.RMprueba2);
 
         cargar = findViewById(R.id.btnverreservamesa);
         cargar2 =findViewById(R.id.btnLoad2);
@@ -43,7 +50,7 @@ public class VerReservas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String consulta = "http://192.168.68.106/login/verreservas.php";
+                String consulta = "http://192.168.68.117/login/verreservas.php";
                 EnviarRecibirDatos(consulta);
 
             }
@@ -53,9 +60,17 @@ public class VerReservas extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String consulta = "http://192.168.68.106/login/verreservasycomida.php";
+                String consulta = "http://192.168.68.117/login/verreservasycomida.php";
                 EnviarRecibirDatos2(consulta);
 
+            }
+        });
+
+        pajtras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Pantalla_admin.class));
+                finish();
             }
         });
 
@@ -66,9 +81,10 @@ public class VerReservas extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(String response) {
-
+                pr.setText("ok");
                 response = response.replace("][",",");
                 if (response.length()>0){
                     try {
@@ -83,8 +99,10 @@ public class VerReservas extends AppCompatActivity {
 
             }
         }, new Response.ErrorListener(){
+            @SuppressLint("SetTextI18n")
             @Override
             public void onErrorResponse(VolleyError error) {
+                pr.setText("Nok");
                 Toast.makeText(VerReservas.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -118,9 +136,10 @@ public class VerReservas extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(String response) {
-
+                pr2.setText("ok");
                 response = response.replace("][",",");
                 if (response.length()>0){
                     try {
@@ -135,8 +154,10 @@ public class VerReservas extends AppCompatActivity {
 
             }
         }, new Response.ErrorListener(){
+            @SuppressLint("SetTextI18n")
             @Override
             public void onErrorResponse(VolleyError error) {
+                pr2.setText("Nok");
                 Toast.makeText(VerReservas.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });

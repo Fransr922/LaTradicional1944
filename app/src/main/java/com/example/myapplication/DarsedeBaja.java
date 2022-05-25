@@ -42,7 +42,7 @@ public class DarsedeBaja extends AppCompatActivity {
         btnacept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                baja("http://127.0.0.1/login/dardebaja.php");
+                baja("http://192.168.68.117/login/dardebaja.php");
             }
         });
 
@@ -64,11 +64,16 @@ public class DarsedeBaja extends AppCompatActivity {
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Toast.makeText(getApplicationContext(), "Usuario eliminado correctame", Toast.LENGTH_SHORT).show();
-                    fAuth.getCurrentUser().delete();
-                    FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(getApplicationContext(), iniciarsesion.class));
-                    finish();
+
+                    if (response.equalsIgnoreCase("Se ha dado de baja correctamente")) {
+                        Toast.makeText(getApplicationContext(), "Usuario eliminado correctame", Toast.LENGTH_SHORT).show();
+                        fAuth.getCurrentUser().delete();
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(), iniciarsesion.class));
+                        finish();
+                    }else{
+                        Toast.makeText(getApplicationContext(), "Correo incorrecto", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }, new Response.ErrorListener() {
                 @Override

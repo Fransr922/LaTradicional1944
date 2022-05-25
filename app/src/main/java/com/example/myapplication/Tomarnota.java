@@ -291,19 +291,24 @@ public class Tomarnota extends AppCompatActivity {
 
                 for (int i = 0; i < listacomida23.getAdapter().getCount(); i++) {
                     //txt.setText((String)lista.getItemAtPosition(i));
-                    textoaux23.setText(textoaux23.getText() + " " + (String) listacomida23.getItemAtPosition(i));
+
+                    //poner coma a comida
+                    if(i==0){
+                        textoaux23.setText(textoaux23.getText() + " " + (String) listacomida23.getItemAtPosition(i));
+                    }else{
+                        textoaux23.setText(textoaux23.getText() + ", " + (String) listacomida23.getItemAtPosition(i));
+                    }
+
+
                 }
 
                 if (textoaux23.getText().toString().equals("")) {
-                    Toast.makeText(Tomarnota.this, "Pida comida", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Tomarnota.this, "Selecciona comida", Toast.LENGTH_SHORT).show();
                 } else {
                     String kk = aux23.getText().toString();
                     int kk2 = Integer.parseInt(kk);
-                    aniadirenbbdd3("http://192.168.68.106/login/tomarnota.php?mesa=" + Smesas3.getSelectedItem().toString() + "" + "&comida=" + textoaux23.getText() + "" + "&gasto=" + kk2 + "");
-                    textoaux23.setText("");
-                    aux23.setText("");
-                    ADPcomida23.clear();
-                    suma23 = 0;
+                    aniadirenbbdd3("http://192.168.68.117/login/tomarnota.php?mesa=" + Smesas3.getSelectedItem().toString() + "" + "&comida=" + textoaux23.getText() + "" + "&gasto=" + kk2 + "");
+
                 }
 
 
@@ -321,13 +326,18 @@ public class Tomarnota extends AppCompatActivity {
             public void onResponse(String response) {
 
                 if (response.equalsIgnoreCase("Anotado")) {
-                    //Toast.makeText(getApplicationContext(), "Reserva realizada", Toast.LENGTH_SHORT).show();
-
+                    Toast.makeText(getApplicationContext(), "Se ha tomado nota correctamente", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), Pantalla_camarero.class));
+                    finish();
 
 
                 } else {
                     Toast.makeText(Tomarnota.this, response, Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(Reservarmesa.this, "No se realizar reserva", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No se ha podido tomar nota", Toast.LENGTH_SHORT).show();
+                    textoaux23.setText("");
+                    aux23.setText("");
+                    ADPcomida23.clear();
+                    suma23 = 0;
                 }
 
 

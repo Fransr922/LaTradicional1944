@@ -1,11 +1,14 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,9 +28,9 @@ import java.util.ArrayList;
 
 public class VerReservasCliente extends AppCompatActivity {
 
-    Button cargarclient,cargarclient2;
+    Button cargarclient,cargarclient2, btnAtrAS;
     ListView listaresultadoclient, listaresultadoclient2;
-
+    TextView pr, pr2;
     FirebaseAuth fAuth;
 
     @Override
@@ -37,6 +40,9 @@ public class VerReservasCliente extends AppCompatActivity {
 
         listaresultadoclient = findViewById(R.id.lvListaclient);
         listaresultadoclient2 = findViewById(R.id.lvListaclient2);
+        btnAtrAS = findViewById(R.id.btnplkoatras);
+        pr = findViewById(R.id.RMCprueba);
+        pr2 = findViewById(R.id.RMCprueba2);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -62,6 +68,14 @@ public class VerReservasCliente extends AppCompatActivity {
 
             }
         });
+
+        btnAtrAS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                finish();
+            }
+        });
     }
     public void EnviarRecibirDatosclient(){
 
@@ -69,10 +83,11 @@ public class VerReservasCliente extends AppCompatActivity {
         final String aux2 = fAuth.getCurrentUser().getEmail();
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.106/login/verreservascliente.php?correo="+aux2+"", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.117/login/verreservascliente.php?correo="+aux2+"", new Response.Listener<String>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(String response) {
-
+                pr.setText("ok");
                 response = response.replace("][",",");
                 if (response.length()>0){
                     try {
@@ -87,8 +102,10 @@ public class VerReservasCliente extends AppCompatActivity {
 
             }
         }, new Response.ErrorListener(){
+            @SuppressLint("SetTextI18n")
             @Override
             public void onErrorResponse(VolleyError error) {
+                pr.setText("Nok");
                 Toast.makeText(VerReservasCliente.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -122,10 +139,11 @@ public class VerReservasCliente extends AppCompatActivity {
         final String aux3 = fAuth.getCurrentUser().getEmail();
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.106/login/verreservasycomidacliente.php?correo="+aux3+"", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.117/login/verreservasycomidacliente.php?correo="+aux3+"", new Response.Listener<String>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(String response) {
-
+                pr2.setText("ok");
                 response = response.replace("][",",");
                 if (response.length()>0){
                     try {
@@ -140,13 +158,16 @@ public class VerReservasCliente extends AppCompatActivity {
 
             }
         }, new Response.ErrorListener(){
+            @SuppressLint("SetTextI18n")
             @Override
             public void onErrorResponse(VolleyError error) {
+                pr2.setText("Nok");
                 Toast.makeText(VerReservasCliente.this, error.getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
         queue.add(stringRequest);
+
     }
 
     public void CargarListViewclient2(JSONArray ja){

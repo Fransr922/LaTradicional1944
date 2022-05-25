@@ -14,20 +14,19 @@
         android:autofillHints=""
         android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
-        android:fontFamily="@font/cinzel_decorative"
+        android:fontFamily="sans-serif-medium"
         android:hint="@string/contrase_a"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:textAllCaps="false"
         android:textColor="@color/colorrojolatra"
         android:textColorHint="@color/colorrojolatra"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551" />
+        app:layout_constraintVertical_bias="0.551"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
         android:id="@+id/txtCorreo"
@@ -36,20 +35,19 @@
         android:autofillHints=""
         android:backgroundTint="@color/colorrojolatra"
         android:ems="10"
-        android:fontFamily="@font/cinzel_decorative"
+        android:fontFamily="sans-serif-medium"
         android:hint="@string/correo"
-        android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:textAllCaps="true"
         android:textColor="@color/colorrojolatra"
         android:textColorHint="@color/colorrojolatra"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426" />
+        app:layout_constraintVertical_bias="0.426"
+        tools:ignore="TextContrastCheck"
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/boton_iniciar_sesion"
@@ -65,7 +63,7 @@
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.75" />
+        app:layout_constraintVertical_bias="0.727" />
 
     <Button
         android:id="@+id/boton_registrar"
@@ -81,7 +79,7 @@
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.921" />
+        app:layout_constraintVertical_bias="0.898" />
 
     <ImageView
         android:id="@+id/foto"

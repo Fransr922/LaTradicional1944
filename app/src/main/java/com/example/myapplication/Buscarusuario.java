@@ -1,10 +1,11 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,7 @@ import org.json.JSONObject;
 
 public class Buscarusuario extends AppCompatActivity {
 
-    EditText cnombre,bape,bcontra,bcorreo,btelf,brol;
+    TextView cnombre,bape,bcontra,bcorreo,btelf,brol, comprobar;
     Button btnsearch, btnbaack;
     RequestQueue requestQueue;
     @Override
@@ -36,20 +37,23 @@ public class Buscarusuario extends AppCompatActivity {
         btelf = findViewById(R.id.Btelefono);
         brol = findViewById(R.id.Brol);
 
+        comprobar = findViewById(R.id.BUprueb);
+
         btnsearch = findViewById(R.id.btnbusc);
         btnbaack = findViewById(R.id.buttonatras);
 
         btnsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buscarUSU("http://192.168.68.106/login/buscarusuario.php?nombre="+cnombre.getText()+"");
+                buscarUSU("http://192.168.68.117/login/buscarusuario.php?nombre="+cnombre.getText()+"");
             }
         });
 
         btnbaack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Buscarusuario.class));
+                startActivity(new Intent(getApplicationContext(), Pantalla_admin.class));
+                finish();
             }
         });
 
@@ -59,8 +63,10 @@ public class Buscarusuario extends AppCompatActivity {
 
     private void buscarUSU (String url){
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onResponse(JSONArray response) {
+                comprobar.setText("ok");
                 JSONObject jsonObject = null;
                 for (int i = 0; i < response.length(); i++) {
                     try {
@@ -71,15 +77,18 @@ public class Buscarusuario extends AppCompatActivity {
                         btelf.setText(jsonObject.getString("telefono"));
                         brol.setText(jsonObject.getString("rol"));
 
+
                     } catch (JSONException e) {
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             }
         }, new Response.ErrorListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "ERROR DE CONEXIÓN", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "No existe usuario", Toast.LENGTH_SHORT).show();
+                comprobar.setText("Nok");
             }
         }
         );

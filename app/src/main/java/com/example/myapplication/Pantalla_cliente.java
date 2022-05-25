@@ -147,5 +147,4 @@ public class Pantalla_cliente extends AppCompatActivity {
 
     }
 
-
 }

@@ -1,14 +1,14 @@
 package com.example.myapplication;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -53,6 +53,7 @@ public class Editarcuenta extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                finish();
             }
         });
     }
@@ -66,16 +67,20 @@ public class Editarcuenta extends AppCompatActivity {
 
         final String aux2 = fAuth.getCurrentUser().getEmail();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.68.106/login/editarusuario.php?correo=" + aux2 + "", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://192.168.68.117/login/editarusuario.php?correo=" + aux2 + "", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Cuenta editada", Toast.LENGTH_SHORT).show();
-                limpiaar();
+                //limpiaar();
+                startActivity(new Intent(getApplicationContext(), Pantalla_cliente.class));
+                finish();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "No se ha podido editar cuenta", Toast.LENGTH_SHORT).show();
+                limpiaar();
             }
         }) {
             @Nullable

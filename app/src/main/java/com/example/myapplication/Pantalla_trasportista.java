@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -14,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,6 +27,8 @@ import java.util.ArrayList;
 public class Pantalla_trasportista extends AppCompatActivity {
 
     ListView listaentreg2;
+    Button cerrT;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,9 @@ public class Pantalla_trasportista extends AppCompatActivity {
 
         //btnverEnt2.findViewById(R.id.btnverentregitas2);
         listaentreg2 = findViewById(R.id.listaaentregarsita2);
+        cerrT = findViewById(R.id.btnLogoutTrans);
+
+        fAuth = FirebaseAuth.getInstance();
 
         RequestQueue queue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, "http://192.168.68.117/login/vercomidaaentregar.php", new Response.Listener<String>() {
@@ -59,6 +68,15 @@ public class Pantalla_trasportista extends AppCompatActivity {
 
         queue.add(stringRequest);
 
+        cerrT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), iniciarsesion.class));
+                finish();
+            }
+        });
+
     }
 
     public void Cargarpedidis(JSONArray ja) {
@@ -78,5 +96,6 @@ public class Pantalla_trasportista extends AppCompatActivity {
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista);
         listaentreg2.setAdapter(adaptador);
     }
+
 
 }
